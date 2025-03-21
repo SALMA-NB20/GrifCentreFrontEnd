@@ -1,0 +1,255 @@
+.professor-dashboard {
+  min-height: 100vh;
+  background-color: #e6e6e6;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.deconnection-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff9966;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin-left: 1rem;
+}
+
+.deconnection-link:hover {
+  background-color: #ff8040;
+}
+
+.icon-container {
+  position: relative;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  background-color: #555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.icon-container:hover {
+  background-color: #666;
+}
+
+.header-icon {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff9966;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 2rem;
+  top: 70px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.dropdown-menu h3 {
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.notification-item {
+  padding: 1rem;
+  border-left: 3px solid #ff9966;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9;
+}
+
+.notification-item p {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.notification-time {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.file-icon {
+  color: #ff9966;
+  font-size: 1.5rem;
+}
+
+.file-name {
+  margin: 0 0 0.2rem 0;
+  font-weight: 500;
+}
+
+.file-size {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.download-btn {
+  background-color: #ff9966;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #ff8040;
+}
+
+.dashboard-content {
+  padding: 2rem;
+}
+
+.classes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.classes-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.classes-table {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: flex;
+  background-color: #333;
+  color: white;
+  padding: 1rem 0;
+}
+
+.header-cell {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  background-color: #b8c1c9;
+}
+
+.table-row:nth-child(even) {
+  background-color: #a9b4bf;
+}
+
+.table-cell {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.id-cell {
+  font-weight: bold;
+}
+
+.action-button {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    width: 90%;
+    right: 5%;
+  }
+  
+  .table-row {
+    flex-direction: column;
+  }
+  
+  .table-cell {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+  }
+}
