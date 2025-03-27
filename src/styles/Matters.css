@@ -1,0 +1,153 @@
+.professor-dashboard {
+  min-height: 100vh;
+  background-color: #e6e6e6;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-content {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.matters-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.matters-table .table-header,
+.matters-table .table-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b8c1c9;
+}
+
+.matters-table .header-cell,
+.matters-table .table-cell {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.back-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #666;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #555;
+}
+
+.matters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.matters-content {
+  padding: 2rem;
+}
+
+.matters-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.matters-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.matter-item {
+  background-color: #b0b0b0;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.retour-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: #ff9966;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.retour-button:hover {
+  background-color: #ff8040;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .matters-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .user-info {
+    gap: 1rem;
+  }
+
+  .matters-content {
+    padding: 1rem;
+  }
+
+  .matters-title {
+    font-size: 1.2rem;
+  }
+
+  .matter-item {
+    font-size: 1rem;
+  }
+}
