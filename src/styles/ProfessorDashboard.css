@@ -252,7 +252,6 @@
   border-radius: 5px;
 }
 
-
 .absence-footer {
   display: flex;
   justify-content: space-between;
@@ -270,3 +269,5 @@
   margin: 0.5rem; /* Add margin for spacing */
 }
       
+
+

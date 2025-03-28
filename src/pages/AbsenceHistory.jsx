@@ -44,10 +44,11 @@ const AbsenceHistory = () => {
   ];
 
   return (
-    <div className="absence-history-container">
-      <header className="dashboard-header">
-        <div className="logo">GrifCentre</div>
-        <div className="user-info">
+     
+        <div className="absence-history-container">
+           <header className="dashboard-student-header">
+           <div className="logo">GrifCentre</div>
+           <div className="user-info">
           <span>prof. Grif Abdeali</span>
           <FaBars className="menu-icon" onClick={toggleMenu} />
         </div>

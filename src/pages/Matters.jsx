@@ -21,7 +21,7 @@ const Matters = () => {
 
   return (
     <div className="professor-dashboard">
-      <header className="dashboard-header">
+      <header className="dashboard-student-header">
         <div className="logo">GrifCentre</div>
         <div className="user-info">
           <span>prof. Grif Abdeali</span>
@@ -62,3 +62,4 @@ const Matters = () => {
 };
 
 export default Matters;
+

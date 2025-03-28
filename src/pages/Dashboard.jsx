@@ -42,7 +42,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <header className="dashboard-header">
+      <header className="dashboard-student-header">
         <div className="logo">GrifCentre</div>
         <div className="user-info">
           <span>Mohamed LABJAOUI</span>
