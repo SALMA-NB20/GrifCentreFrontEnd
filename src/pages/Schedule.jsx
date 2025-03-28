@@ -28,11 +28,11 @@ const Schedule = () => {
         </div>
       </header>
 
-      <div className="schedule-content">
+      <div className="student-schedule-content">
         <h2 className="schedule-title">EMPLOI DU TEMPS:</h2>
         
-        <div className="schedule-table">
-          <div className="table-header">
+        <div className="student-schedule-table">
+          <div className="student-table-header">
             <div className="header-cell">Day</div>
             <div className="header-cell">Start Time</div>
             <div className="header-cell">End Time</div>

@@ -52,7 +52,7 @@ const Dashboard = () => {
               {!showFiles && <span className="notification-badge">3</span>}
             </div>
             <div className="icon-container" onClick={toggleNotifications}>
-                    `   ;`              <FaBell className="header-icon" />
+               <FaBell className="header-icon" />
               {!showNotifications && <span className="notification-badge">2</span>}
             </div>
             <a href="/" className="deconnection-link">Déconnexion</a>
@@ -99,16 +99,16 @@ const Dashboard = () => {
           <h2 className="formations-title">MES FORMATION:</h2>
           
           <div className="formations-table">
-            <div className="table-header">
-              <div className="header-cell">Classes</div>
-              <div className="header-cell">Matiers</div>
-              <div className="header-cell">Emploi Du Temps</div>
-              <div className="header-cell">Montant</div>
-              <div className="header-cell">Status</div>
+            <div className="formations-table-header">
+              <div className="formations-header-cell">Classes</div>
+              <div className="formations-header-cell">Matiers</div>
+              <div className="formations-header-cell">Emploi Du Temps</div>
+              <div className="formations-header-cell">Montant</div>
+              <div className="formations-header-cell">Status</div>
             </div>
             
             {formations.map((formation) => (
-              <div className="table-row" key={formation.id}>
+              <div className="formations-table-row" key={formation.id}>
                 <div className="table-cell id-cell">{formation.id}</div>
                 <div className="table-cell title-cell">{formation.title}</div>
                 <div className="table-cell action-cell">

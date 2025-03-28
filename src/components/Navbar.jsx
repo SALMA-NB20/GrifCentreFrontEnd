@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Navbar.css';
+import '../styles/Navbar.css'; // Ensure this path is correct
 
 const Navbar = () => {
   return (
@@ -10,8 +10,8 @@ const Navbar = () => {
           GrifCentre
         </Link>
         <div className="navbar-links">
-          <Link to="/about" className="nav-link">About Us</Link>
-          <Link to="/contact" className="nav-link">Contact Us</Link>
+          <a href="#about-section" className="nav-link">About Us</a> {/* Update href to match section ID */}
+          <a href="#contact-section" className="nav-link">Contact Us</a> {/* Update href to match section ID */}
         </div>
       </div>
     </nav>

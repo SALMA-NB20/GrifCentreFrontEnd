@@ -1,15 +1,17 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import '../styles/ContactUs.css';
 
 const ContactUs = () => {
   return (
-    <section className="contact-section" id="contact">
+    <section className="conntact-sectio" id="contact">
       <div className="contact-container">
         <h2 className="contact-title">CONTACT</h2>
         <div className="contact-info">
           <div className="contact-phone">
             <h3>Phone</h3>
-            <p>+212 657 206177</p>
+            <p><FontAwesomeIcon icon={faPhone} /> +123 456 7890</p>
           </div>
           <div className="contact-locations">
             <h3>LOCATION</h3>

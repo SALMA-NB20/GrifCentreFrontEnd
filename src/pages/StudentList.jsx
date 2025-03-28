@@ -8,6 +8,14 @@ const StudentList = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [attendance, setAttendance] = useState({});
   const [notification, setNotification] = useState('');
+  const [students, setStudents] = useState([
+    { id: 1, lastName: 'NBIGA', firstName: 'Salma', description: '' },
+    { id: 2, lastName: 'LABJAOUI', firstName: 'Mohamed', description: '' },
+    { id: 3, lastName: 'GHALOUA', firstName: 'Saad', description: '' },
+    { id: 4, lastName: 'BOURRAT', firstName: 'Daimam', description: '' },
+    { id: 5, lastName: 'MESRAR', firstName: 'Amina', description: '' },
+  ]);
+  const [description, setDescription] = useState(''); // Shared description state
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -20,19 +28,19 @@ const StudentList = () => {
     }));
   };
 
+  const handleDescriptionChange = (studentId, value) => {
+    setStudents((prevStudents) =>
+      prevStudents.map((student) =>
+        student.id === studentId ? { ...student, description: value } : student
+      )
+    );
+  };
+
   const handleSaveAbsences = () => {
     setNotification('The absences saved successfully');
     setAttendance({}); // Reset attendance state
     setTimeout(() => setNotification(''), 3000); // Clear notification after 3 seconds
   };
-
-  const students = [
-    { id: 1, lastName: 'NBIGA', firstName: 'Salma', description: '' },
-    { id: 2, lastName: 'LABJAOUI', firstName: 'Mohamed', description: '' },
-    { id: 3, lastName: 'GHALOUA', firstName: 'Saad', description: '' },
-    { id: 4, lastName: 'BOURRAT', firstName: 'Daimam', description: '' },
-    { id: 5, lastName: 'MESRAR', firstName: 'Amina', description: '' },
-  ];
 
   return (
     <div className="professor-dashboard">
@@ -50,6 +58,7 @@ const StudentList = () => {
             <li onClick={() => navigate('/professor-dashboard')}>Mes classes</li>
             <li onClick={() => navigate('/absence-history')}>Historique d'absences</li>
             <li onClick={() => navigate('/upload-files')}>Upload files</li>
+            <li onClick={() => navigate('/')}>Deconnection</li>
           </ul>
         </div>
       )}
@@ -57,12 +66,21 @@ const StudentList = () => {
       <div className="dashboard-content">
         <div className="students-container">
           <h2 className="section-title">LIST ETUDIANT:</h2>
+          <div className="description-container">
+            <label htmlFor="description">Description for all students:</label>
+            <input
+              type="text"
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="description-input"
+            />
+          </div>
           <table className="students-table">
             <thead>
               <tr>
                 <th>Nom Etudiant</th>
                 <th>Prenom Etudiant</th>
-                <th>Description</th>
                 <th>Noter les absences</th>
               </tr>
             </thead>
@@ -71,7 +89,6 @@ const StudentList = () => {
                 <tr key={student.id}>
                   <td>{student.lastName}</td>
                   <td>{student.firstName}</td>
-                  <td>{student.description}</td>
                   <td>
                     <label>
                       <input

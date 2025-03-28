@@ -47,6 +47,7 @@ const UploadFiles = () => {
           </form>
         </div>
       </div>
+      <button className="back-button" onClick={() => window.history.back()}>Retour</button>
     </div>
   );
 };

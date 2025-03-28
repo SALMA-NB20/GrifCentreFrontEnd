@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/ProfessorDashboard.css'; // Reuse existing styles
-import { FaBars } from 'react-icons/fa';
+import '../styles/AbsenceHistory.css';
+import '../styles/ProfessorDashboard.css';
+import { FaBars } from 'react-icons/fa'; // Import FaBars
 
 const AbsenceHistory = () => {
   const navigate = useNavigate();
@@ -11,25 +12,39 @@ const AbsenceHistory = () => {
     setShowMenu(!showMenu);
   };
 
+  const handleLogout = () => {
+    navigate('/'); // Navigate to the home page
+  };
+
   const absenceData = [
     {
-      date: 'LUNDI 09 MARS 2024',
+      date: 'LUNDI 09\nMARS 2024',
       class: '2Bac',
-      subject: 'Developpment',
+      subject: 'Development',
       description: '',
-      absences: ['MOHAMED LABJAOUI', 'AMINA GHIBA', 'HAMZA CNTOUF', 'SALMA NBIGA', 'AHMED MOUSSIF'],
+      absences: [
+        'MOHAMED LABJAQUI',
+        'AMINA GHIBA',
+        'HAMZA CHNTOUF',
+        'SALMA NBIGA',
+        'AHMED MOUSSIF'
+      ]
     },
     {
-      date: 'MARDI 10 MARS 2024',
+      date: 'MARDI 10\nMARS 2024',
       class: '2BAC',
       subject: 'RESEAU INFORMATIQUE',
       description: '',
-      absences: ['MOHAMED LABJAOUI', 'AMINA GHIBA', 'HAMZA CNTOUF'],
-    },
+      absences: [
+        'MOHAMED LABJAQUI',
+        'AMINA GHIBA',
+        'HAMZA CHNTOUF'
+      ]
+    }
   ];
 
   return (
-    <div className="professor-dashboard">
+    <div className="absence-history-container">
       <header className="dashboard-header">
         <div className="logo">GrifCentre</div>
         <div className="user-info">
@@ -44,37 +59,42 @@ const AbsenceHistory = () => {
             <li onClick={() => navigate('/professor-dashboard')}>Mes classes</li>
             <li onClick={() => navigate('/absence-history')}>Historique d'absences</li>
             <li onClick={() => navigate('/upload-files')}>Upload files</li>
-            <li onClick={() => navigate('/')}>Deconnection</li>
+            <li onClick={handleLogout}>Deconnection</li> {/* Updated Deconnection link */}
           </ul>
         </div>
       )}
-
-      <div className="dashboard-content">
-        <h2 className="section-title">HISTORIQUE D'ABSENCES:</h2>
-        <div className="absence-table">
-          <div className="table-header">
-            <div className="header-cell">Date</div>
-            <div className="header-cell">Classes</div>
-            <div className="header-cell">Matier</div>
-            <div className="header-cell">Description</div>
-            <div className="header-cell">Liste d'absences</div>
+      <div className="absence-history-content">
+        <h2 className="absence-history-title">HISTORIQUE D'ABSENCES:</h2>
+        
+        <div className="absence-history-list">
+          <div className="absence-header">
+            <div className="header-item">Date</div>
+            <div className="header-item">Classes</div>
+            <div className="header-item">Matter</div>
+            <div className="header-item">Description</div>
+            <div className="header-item">Liste d'absences</div>
           </div>
+          
           {absenceData.map((item, index) => (
-            <div className="table-row" key={index}>
-              <div className="table-cell date-cell">{item.date}</div>
-              <div className="table-cell class-cell">{item.class}</div>
-              <div className="table-cell subject-cell">{item.subject}</div>
-              <div className="table-cell description-cell">{item.description}</div>
-              <div className="table-cell absences-cell">
+            <div className="absence-item" key={index}>
+              <div className="absence-date">
+                {item.date.split('\n').map((line, i) => (
+                  <div key={i}>{line}</div>
+                ))}
+              </div>
+              <div className="absence-class">{item.class}</div>
+              <div className="absence-subject">{item.subject}</div>
+              <div className="absence-description">{item.description}</div>
+              <div className="absence-names">
                 {item.absences.map((name, i) => (
-                  <div key={i}>{name}</div>
+                  <div key={i}>- {name}</div>
                 ))}
               </div>
             </div>
           ))}
         </div>
-        <button className="back-button" onClick={() => navigate('/professor-dashboard')}>Retour</button>
       </div>
+      <button className="back-button" onClick={() => window.history.back()}>Retour</button>
     </div>
   );
 };
